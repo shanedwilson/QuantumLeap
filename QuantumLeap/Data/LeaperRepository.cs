@@ -59,7 +59,6 @@ namespace QuantumLeap.Data
             throw new Exception("Could not update leaper.");
         }
 
-
         public IEnumerable<Leaper> GetAll()
         {
             using (var db = new SqlConnection(ConnectionString))
@@ -68,8 +67,6 @@ namespace QuantumLeap.Data
 
                 return leapers;
             }
-
-
         }
     }
 }
