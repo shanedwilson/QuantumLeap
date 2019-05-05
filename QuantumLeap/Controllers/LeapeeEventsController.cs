@@ -52,5 +52,13 @@ namespace QuantumLeap.Controllers
 
             return Ok(leapeeEvents);
         }
+
+        [HttpGet("random")]
+        public ActionResult GetRandomLeapeeEvents()
+        {
+            var randomLeapeeEvent = _leapeeEventRepository.GetRandomLeapeeEvent();
+
+            return Ok(randomLeapeeEvent);
+        }
     }
 }

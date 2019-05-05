@@ -68,5 +68,17 @@ namespace QuantumLeap.Data
                 return leapeeEvents;
             }
         }
+
+        public LeapeeEvent GetRandomLeapeeEvent()
+        {
+            using (var db = new SqlConnection(ConnectionString))
+            {
+                var randomLeapeeEvent = db.QueryFirstOrDefault<LeapeeEvent>(@"Select TOP(1) le.* 
+                                                                       From LeapeeEvents as le
+                                                                       Order By NEWID()");
+
+                return randomLeapeeEvent;
+            }
+        }
     }
 }
