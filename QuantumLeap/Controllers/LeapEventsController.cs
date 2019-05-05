@@ -26,7 +26,7 @@ namespace QuantumLeap.Controllers
             var newLeapEvent = _leapEventRepository.AddLeapEvent(createRequest.LeaperId,
                             createRequest.LeapeeEventId, createRequest.Cost);
 
-            return Created($"api/leapers/{newLeapEvent.Id}", newLeapEvent);
+            return Created($"api/leapevents/{newLeapEvent.Id}", newLeapEvent);
         }
 
         [HttpDelete("{leapEventId}")]
